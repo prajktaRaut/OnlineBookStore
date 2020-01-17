@@ -329,7 +329,6 @@ public class UserDetailsTest extends BaseTest {
             e.printStackTrace();
             e.getMessage();
         }
-
     }
 
     @Test
