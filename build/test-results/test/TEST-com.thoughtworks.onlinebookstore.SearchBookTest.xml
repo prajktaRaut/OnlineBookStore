@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.thoughtworks.onlinebookstore.SearchBookTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-01-25T09:40:18" hostname="admin-LIVA-Z2V" time="2.661">
+<testsuite name="com.thoughtworks.onlinebookstore.SearchBookTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-01-25T11:47:55" hostname="admin-LIVA-Z2V" time="2.75">
   <properties/>
-  <testcase name="givenGetBookByNameApi_WhenHitApiWithNumberAsBookName_ShouldReturnNotFoundMessage" classname="com.thoughtworks.onlinebookstore.SearchBookTest" time="2.661">
+  <testcase name="givenGetBookByNameApi_WhenHitApiWithNumberAsBookName_ShouldReturnNotFoundMessage" classname="com.thoughtworks.onlinebookstore.SearchBookTest" time="2.75">
     <failure message="java.lang.AssertionError: expected:&lt;404&gt; but was:&lt;200&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;404&gt; but was:&lt;200&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
 	at org.junit.Assert.assertEquals(Assert.java:645)
 	at org.junit.Assert.assertEquals(Assert.java:631)
-	at com.thoughtworks.onlinebookstore.SearchBookTest.givenGetBookByNameApi_WhenHitApiWithNumberAsBookName_ShouldReturnNotFoundMessage(SearchBookTest.java:80)
+	at com.thoughtworks.onlinebookstore.SearchBookTest.givenGetBookByNameApi_WhenHitApiWithNumberAsBookName_ShouldReturnNotFoundMessage(SearchBookTest.java:77)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

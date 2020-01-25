@@ -21,10 +21,9 @@ public class BookListFromDBTest extends BaseTest {
                     .accept(ContentType.JSON)
                     .when()
                     .get("/");
-            int statusCode = response.getStatusCode();
             ResponseBody body = response.getBody();
             Object Object = new JSONParser().parse(body.prettyPrint());
-            Assert.assertEquals(200,statusCode);
+            response.then().assertThat().statusCode(200);
         } catch (ParseException e) {
             e.printStackTrace();
         }

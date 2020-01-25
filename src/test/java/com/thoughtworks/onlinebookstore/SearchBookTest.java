@@ -20,10 +20,9 @@ public class SearchBookTest extends BaseTest{
                     .when()
                     .pathParam("bookName","Angel")
                     .get("/get/{bookName}");
-            int statusCode = response.getStatusCode();
             ResponseBody body = response.getBody();
             Object Object = new JSONParser().parse(body.prettyPrint());
-            Assert.assertEquals(200,statusCode);
+            response.then().assertThat().statusCode(200);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -38,10 +37,9 @@ public class SearchBookTest extends BaseTest{
                     .when()
                     .pathParam("bookName","abcd")
                     .get("/get/{bookName}");
-            int statusCode = response.getStatusCode();
             ResponseBody body = response.getBody();
             Object Object = new JSONParser().parse(body.prettyPrint());
-            Assert.assertEquals(404,statusCode);
+            response.then().assertThat().statusCode(404);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -56,10 +54,9 @@ public class SearchBookTest extends BaseTest{
                     .when()
                     .pathParam("bookName","")
                     .get("/get/{bookName}");
-            int statusCode = response.getStatusCode();
             ResponseBody body = response.getBody();
             Object Object = new JSONParser().parse(body.prettyPrint());
-            Assert.assertEquals(404,statusCode);
+            response.then().assertThat().statusCode(404);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -74,10 +71,9 @@ public class SearchBookTest extends BaseTest{
                     .when()
                     .pathParam("bookName","1234")
                     .get("/get/{bookName}");
-            int statusCode = response.getStatusCode();
             ResponseBody body = response.getBody();
             Object Object = new JSONParser().parse(body.prettyPrint());
-            Assert.assertEquals(404,statusCode);
+            response.then().assertThat().statusCode(404);
         } catch (ParseException e) {
             e.printStackTrace();
         }
