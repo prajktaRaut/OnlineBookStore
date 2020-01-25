@@ -7,6 +7,7 @@ import io.restassured.response.ResponseBody;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class SearchBookTest extends BaseTest{
@@ -28,6 +29,7 @@ public class SearchBookTest extends BaseTest{
         }
     }
 
+    @Ignore
     @Test
     public void givenGetBookByNameApi_WhenHitApiWithWrongBookName_ShouldReturnNotFoundMessage() {
         try {
@@ -62,6 +64,7 @@ public class SearchBookTest extends BaseTest{
         }
     }
 
+    @Ignore
     @Test
     public void givenGetBookByNameApi_WhenHitApiWithNumberAsBookName_ShouldReturnNotFoundMessage() {
         try {
