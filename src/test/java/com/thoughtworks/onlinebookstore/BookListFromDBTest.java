@@ -20,7 +20,7 @@ public class BookListFromDBTest extends BaseTest {
                     .contentType(ContentType.JSON)
                     .accept(ContentType.JSON)
                     .when()
-                    .get("/list");
+                    .get("/");
             int statusCode = response.getStatusCode();
             ResponseBody body = response.getBody();
             Object Object = new JSONParser().parse(body.prettyPrint());

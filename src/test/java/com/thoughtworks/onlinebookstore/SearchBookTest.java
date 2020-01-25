@@ -19,7 +19,7 @@ public class SearchBookTest extends BaseTest{
                     .accept(ContentType.JSON)
                     .when()
                     .pathParam("bookName","Angel")
-                    .get("/bookByName/{bookName}");
+                    .get("/get/{bookName}");
             int statusCode = response.getStatusCode();
             ResponseBody body = response.getBody();
             Object Object = new JSONParser().parse(body.prettyPrint());
@@ -37,7 +37,7 @@ public class SearchBookTest extends BaseTest{
                     .accept(ContentType.JSON)
                     .when()
                     .pathParam("bookName","abcd")
-                    .get("/bookByName/{bookName}");
+                    .get("/get/{bookName}");
             int statusCode = response.getStatusCode();
             ResponseBody body = response.getBody();
             Object Object = new JSONParser().parse(body.prettyPrint());
@@ -55,7 +55,7 @@ public class SearchBookTest extends BaseTest{
                     .accept(ContentType.JSON)
                     .when()
                     .pathParam("bookName","")
-                    .get("/bookByName/{bookName}");
+                    .get("/get/{bookName}");
             int statusCode = response.getStatusCode();
             ResponseBody body = response.getBody();
             Object Object = new JSONParser().parse(body.prettyPrint());
@@ -73,7 +73,7 @@ public class SearchBookTest extends BaseTest{
                     .accept(ContentType.JSON)
                     .when()
                     .pathParam("bookName","1234")
-                    .get("/bookByName/{bookName}");
+                    .get("/get/{bookName}");
             int statusCode = response.getStatusCode();
             ResponseBody body = response.getBody();
             Object Object = new JSONParser().parse(body.prettyPrint());
