@@ -25,7 +25,7 @@ public class ConfirmationEmailTest extends BaseTest {
                         "     \"bookId\": 2,\n" +
                         "     \"bookName\": \"mahendrabook\",\n" +
                         "     \"description\": \"abcd\",\n" +
-                        "     \"image\": \"mahendra.src\",\n" +
+                        "     \"image\": \"mahendra.png\",\n" +
                         "     \"price\": 100,\n" +
                         "     \"quantity\": 4\n" +
                         "   }\n" +
@@ -34,13 +34,12 @@ public class ConfirmationEmailTest extends BaseTest {
                         "   \"address\": \"Pune\",\n" +
                         "   \"country\": \"India\",\n" +
                         "   \"email\": \"hemilturakhia@gmail.com\",\n" +
-                        "   \"name\": \"hemil\",\n" +
+                        "   \"name\": \"Hemil\",\n" +
                         "   \"pinCode\": \"431001\"\n" +
                         " }\n" +
                         "}")
                 .post("/order");
                 response.then().assertThat().statusCode(200);
-
     }
 
 
@@ -72,43 +71,6 @@ public class ConfirmationEmailTest extends BaseTest {
                             "}")
                     .post("/order");
             response.then().assertThat().statusCode(400);
-    }
-
-        @Ignore
-        @Test
-        public void givenApiUnderExecution_WhenUserEntersPersonalDetailsToPurchaseBook_ThenCountryShouldBeOfValidName() {
-            try {
-                Response response = RestAssured.given()
-                        .contentType(ContentType.JSON)
-                        //.accept(ContentType.JSON)
-                        .when()
-                        .body("{" +
-                                " \"bookList\": [\n" +
-                                "   {\n" +
-                                "     \"authorName\": \"mahendra\",\n" +
-                                "     \"bookId\": 7,\n" +
-                                "     \"bookName\": \"mahendrabook\",\n" +
-                                "     \"description\": \"abcd\",\n" +
-                                "     \"image\": \"mahendra.src\",\n" +
-                                "     \"price\": 100,\n" +
-                                "     \"quantity\": 2\n" +
-                                "   }\n" +
-                                " ],\n" +
-                                " \"consumerDto\": {\n" +
-                                "   \"address\": \"Pune\",\n" +
-                                "   \"country\": \"Indiaaa\",\n" +
-                                "   \"email\": \"hemilturakhia@gmail.com\",\n" +
-                                "   \"name\": \"PrajktaRaut\",\n" +
-                                "   \"pinCode\": \"431010\"\n" +
-                                " }\n" +
-                                "}")
-                        .post("/order");
-                response.then().assertThat().statusCode(400);
-                ResponseBody body = response.getBody();
-                Object Object = new JSONParser().parse(body.prettyPrint());
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
     }
 
     @Test
